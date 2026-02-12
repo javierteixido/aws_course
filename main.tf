@@ -1,12 +1,12 @@
 # 1. VPC e Internet Gateway
 resource "aws_vpc" "vpc_shared_services" {
   cidr_block = var.vpc_cidr
-  tags       = { Name = "vpc-shared-services" }
+  tags       = { Name = "vpc_shared_services" }
 }
 
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.vpc_shared_services.id
-  tags       = { Name = "main-igw" }
+  tags       = { Name = "igw-vpc_shared_services" }
 }
 
 # 2. Subnets Públicas
